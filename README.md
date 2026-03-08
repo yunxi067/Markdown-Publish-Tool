@@ -63,7 +63,7 @@ npm run dev:host
 Windows quick start script:
 
 ```bash
-快速启动.bat
+quick-start.bat
 ```
 
 This script is useful for local double-click startup on Windows machines.

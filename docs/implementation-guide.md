@@ -25,7 +25,7 @@ npm run dev
 
 ## One-click quick start (Windows)
 
-- Double click [快速启动.bat](/D:/app/yxmdtools/快速启动.bat).
+- Double click `quick-start.bat`.
 - The script will:
   - check Node/npm
   - install dependencies

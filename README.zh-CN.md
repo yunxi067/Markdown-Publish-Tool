@@ -63,7 +63,7 @@ npm run dev:host
 Windows 快速启动脚本：
 
 ```bash
-快速启动.bat
+quick-start.bat
 ```
 
 如果你在 Windows 本地使用，这个脚本适合双击直接启动项目。
