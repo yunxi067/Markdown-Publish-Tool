@@ -1,0 +1,27 @@
+﻿import type { Theme } from "./types";
+import { backgroundSvgs } from "../assets/svgDecorations";
+
+const { dotGrid, waveLines, diagonalMesh, cornerAura, hexNet, grain, rings, staircase, arcs, plusGrid } = backgroundSvgs;
+
+export const themes: Theme[] = [
+  { id: "classic-paper", name: "经典纸张", description: "温润纸感与衬线排版", category: "editorial", cssVars: { "--bg": "#f6f2e8", "--panel": "#fffdf7", "--text": "#1f1f1d", "--muted": "#665f53", "--primary": "#946b2d", "--code-bg": "#efe4ce" }, backgroundImage: `${grain}, ${dotGrid}`, backgroundSize: "120px 120px, 26px 26px" },
+  { id: "ocean-notes", name: "海洋笔记", description: "清爽蓝调内容风格", category: "light", cssVars: { "--bg": "#eaf3f8", "--panel": "#ffffff", "--text": "#14212b", "--muted": "#4c6274", "--primary": "#1d79b7", "--code-bg": "#e5f1fa" }, backgroundImage: `${waveLines}, ${cornerAura}`, backgroundSize: "160px 60px, 280px 280px" },
+  { id: "forest-journal", name: "森林手记", description: "自然绿意阅读感", category: "nature", cssVars: { "--bg": "#eef3ea", "--panel": "#f9fcf7", "--text": "#142014", "--muted": "#50614f", "--primary": "#2f7a42", "--code-bg": "#e6efe6" }, backgroundImage: `${diagonalMesh}, ${grain}`, backgroundSize: "34px 34px, 120px 120px" },
+  { id: "sunset-ink", name: "晚霞墨色", description: "暖橙对比杂志感", category: "editorial", cssVars: { "--bg": "#fff2e8", "--panel": "#fffaf7", "--text": "#2b1f1a", "--muted": "#70584c", "--primary": "#d9611f", "--code-bg": "#ffe7d7" }, backgroundImage: `${arcs}, ${grain}`, backgroundSize: "180px 70px, 120px 120px" },
+  { id: "graphite-pro", name: "石墨专业", description: "深色中性商务风", category: "dark", cssVars: { "--bg": "#1d2226", "--panel": "#242b30", "--text": "#f0f3f4", "--muted": "#b2bdc3", "--primary": "#f2a844", "--code-bg": "#111518" }, backgroundImage: `${hexNet}, ${rings}`, backgroundSize: "54px 46px, 90px 90px" },
+  { id: "ruby-news", name: "红宝新闻", description: "红色杂志风高亮", category: "editorial", cssVars: { "--bg": "#fff1f2", "--panel": "#fffbfb", "--text": "#2a1617", "--muted": "#7a4a4f", "--primary": "#bf2f3a", "--code-bg": "#fde6e8" }, backgroundImage: `${cornerAura}, ${dotGrid}`, backgroundSize: "280px 280px, 26px 26px" },
+  { id: "mono-lab", name: "单色实验室", description: "技术文档风格", category: "tech", cssVars: { "--bg": "#eceff1", "--panel": "#f6f8f9", "--text": "#151b1f", "--muted": "#56616a", "--primary": "#1f6a8a", "--code-bg": "#e3e9ee" }, backgroundImage: `${diagonalMesh}, ${plusGrid}`, backgroundSize: "34px 34px, 30px 30px" },
+  { id: "amber-ledger", name: "琥珀账本", description: "报告风商务质感", category: "editorial", cssVars: { "--bg": "#faf3e1", "--panel": "#fffef9", "--text": "#2a2416", "--muted": "#6b5f3e", "--primary": "#a07a1f", "--code-bg": "#f3e7c6" }, backgroundImage: `${hexNet}, ${grain}`, backgroundSize: "54px 46px, 90px 90px" },
+  { id: "midnight-velvet", name: "午夜天鹅绒", description: "高级深蓝夜色", category: "dark", cssVars: { "--bg": "#111729", "--panel": "#171f35", "--text": "#ebf0ff", "--muted": "#a9b2ce", "--primary": "#d8b46a", "--code-bg": "#0c1222" }, backgroundImage: `${waveLines}, ${hexNet}`, backgroundSize: "170px 64px, 54px 46px" },
+  { id: "aurora-mint", name: "极光薄荷", description: "清新薄荷玻璃感", category: "nature", cssVars: { "--bg": "#e8fbf4", "--panel": "#f6fffb", "--text": "#11241f", "--muted": "#4b6d63", "--primary": "#1f9d7a", "--code-bg": "#dff7ef" }, backgroundImage: `${cornerAura}, ${diagonalMesh}`, backgroundSize: "280px 280px, 34px 34px" },
+  { id: "sakura-fog", name: "樱雾", description: "柔和粉色编辑风", category: "editorial", cssVars: { "--bg": "#fff2f7", "--panel": "#fffafd", "--text": "#2a1721", "--muted": "#7b5a69", "--primary": "#d6578a", "--code-bg": "#ffe5f1" }, backgroundImage: `${dotGrid}, ${cornerAura}`, backgroundSize: "26px 26px, 280px 280px" },
+  { id: "bronze-grid", name: "青铜网格", description: "建筑感结构纹理", category: "editorial", cssVars: { "--bg": "#f4ece4", "--panel": "#fff9f3", "--text": "#2d2016", "--muted": "#6e5746", "--primary": "#a76a3a", "--code-bg": "#efdfcf" }, backgroundImage: `${hexNet}, ${staircase}`, backgroundSize: "54px 46px, 56px 56px" },
+  { id: "ice-circuit", name: "冰川电路", description: "冷色科技杂志感", category: "tech", cssVars: { "--bg": "#eef6ff", "--panel": "#f9fcff", "--text": "#0f1d2c", "--muted": "#4f6478", "--primary": "#2f83cc", "--code-bg": "#e2effd" }, backgroundImage: `${diagonalMesh}, ${arcs}`, backgroundSize: "34px 34px, 180px 70px" },
+  { id: "charcoal-ink", name: "炭黑墨韵", description: "博物馆级深色阅读", category: "dark", cssVars: { "--bg": "#1a1a1b", "--panel": "#222326", "--text": "#f2f2f0", "--muted": "#b8b8b2", "--primary": "#d2c27a", "--code-bg": "#101114" }, backgroundImage: `${grain}, ${dotGrid}`, backgroundSize: "80px 80px, 26px 26px" },
+  { id: "lavender-editorial", name: "薰衣编辑", description: "紫调优雅杂志风", category: "editorial", cssVars: { "--bg": "#f3efff", "--panel": "#fcfaff", "--text": "#241a35", "--muted": "#6b5f7f", "--primary": "#7f62d8", "--code-bg": "#e8e0ff" }, backgroundImage: `${hexNet}, ${cornerAura}`, backgroundSize: "54px 46px, 280px 280px" },
+  { id: "teal-atelier", name: "青瓷工坊", description: "工作室质感青色", category: "light", cssVars: { "--bg": "#e8f8f8", "--panel": "#f7ffff", "--text": "#122426", "--muted": "#4b6c70", "--primary": "#1d8a91", "--code-bg": "#dff1f3" }, backgroundImage: `${waveLines}, ${plusGrid}`, backgroundSize: "170px 64px, 30px 30px" },
+];
+
+export function getTheme(themeId: string): Theme {
+  return themes.find((theme) => theme.id === themeId) ?? themes[0];
+}

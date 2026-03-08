@@ -1,0 +1,40 @@
+{
+  "name": "md-publish-tool",
+  "private": false,
+  "version": "0.1.0",
+  "description": "A Markdown publishing tool for themed article layout, WeChat-friendly copy, and multi-format export.",
+  "license": "MIT",
+  "keywords": [
+    "markdown",
+    "wechat",
+    "publisher",
+    "typescript",
+    "vite",
+    "react"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:host": "vite --host 0.0.0.0 --port 5173 --strictPort",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "highlight.js": "^11.11.1",
+    "html2pdf.js": "^0.10.3",
+    "markdown-it": "^14.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "turndown": "^7.2.1",
+    "turndown-plugin-gfm": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.4.1",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vitest": "^3.0.8"
+  }
+}
