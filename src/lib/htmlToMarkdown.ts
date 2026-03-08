@@ -28,8 +28,7 @@ function fileToDataUrl(file: Blob): Promise<string> {
   });
 }
 
-export async function richTextToMarkdown(event: ClipboardEvent): Promise<string | null> {
-  const data = event.clipboardData;
+export async function clipboardDataToMarkdown(data: DataTransfer | null): Promise<string | null> {
   if (!data) {
     return null;
   }
@@ -56,4 +55,8 @@ export async function richTextToMarkdown(event: ClipboardEvent): Promise<string 
   }
 
   return plain || null;
+}
+
+export async function richTextToMarkdown(event: ClipboardEvent): Promise<string | null> {
+  return clipboardDataToMarkdown(event.clipboardData);
 }

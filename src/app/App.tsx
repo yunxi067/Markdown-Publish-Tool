@@ -13,7 +13,7 @@ import { useWorkspaceState } from "../hooks/useWorkspaceState";
 import { useAutosave } from "../hooks/useAutosave";
 import { useShortcuts } from "../hooks/useShortcuts";
 import { useScrollSync } from "../hooks/useScrollSync";
-import { richTextToMarkdown } from "../lib/htmlToMarkdown";
+import { clipboardDataToMarkdown } from "../lib/htmlToMarkdown";
 import { makeWeChatCompatible } from "../lib/wechatCompat";
 import { calculateDocumentMetrics } from "../lib/documentMetrics";
 import { exportDoc, exportDocxLite, exportHtml } from "../lib/wordExport";
@@ -149,22 +149,24 @@ export function App() {
   }
 
   async function handlePaste(event: ClipboardEvent<HTMLTextAreaElement>) {
-    const markdown = await richTextToMarkdown(event.nativeEvent);
-    if (!markdown) {
-      return;
-    }
-
     event.preventDefault();
 
     const textarea = event.currentTarget;
     const start = textarea.selectionStart;
     const end = textarea.selectionEnd;
+    const fallbackPlain = event.clipboardData.getData("text/plain");
+    const markdown = await clipboardDataToMarkdown(event.clipboardData);
+    const content = markdown ?? fallbackPlain;
 
-    const merged = `${state.markdownInput.slice(0, start)}${markdown}${state.markdownInput.slice(end)}`;
+    if (!content) {
+      return;
+    }
+
+    const merged = `${state.markdownInput.slice(0, start)}${content}${state.markdownInput.slice(end)}`;
     setMarkdownInput(merged);
 
     requestAnimationFrame(() => {
-      textarea.selectionStart = textarea.selectionEnd = start + markdown.length;
+      textarea.selectionStart = textarea.selectionEnd = start + content.length;
     });
 
     setStatus(text.statusPasted);
